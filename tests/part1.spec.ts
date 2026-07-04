@@ -53,5 +53,3 @@ test("selects the Option 1 checkbox", async ({ page }) => {
 
 //role-based- breaks on meaningful user-visible change
 //attribute-based- breaks on invisible code-level change
-
-//npx playwright test part1.spec.ts
