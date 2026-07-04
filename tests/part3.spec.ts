@@ -46,8 +46,8 @@ test("clicks the link,and verifies the resulting page's URL", async ({
   await page.goto("https://selectors-practice.onrender.com/");
   //sets up a listener
   const popup = page.waitForEvent("popup");
-  //result is the actual new tab
   await page.getByRole("link", { name: "Example Website" }).click();
+  //result is the actual new tab
   const result = await popup;
   //checks the URL of the new tab (result), but page
   //page still points at the original practice site tab

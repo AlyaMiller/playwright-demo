@@ -21,6 +21,8 @@ test("get started link", async ({ page }) => {
 });
 
 // npx playwright codegen https://selectors-practice.onrender.com/
+
+// This is the example of the playwright codegen
 // import { test, expect } from '@playwright/test';
 
 // test('test', async ({ page }) => {
