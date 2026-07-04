@@ -47,6 +47,7 @@ test("clicks the link,and verifies the resulting page's URL", async ({
   //sets up a listener
   const popup = page.waitForEvent("popup");
   //result is the actual new tab
+  await page.getByRole("link", { name: "Example Website" }).click();
   const result = await popup;
   //checks the URL of the new tab (result), but page
   //page still points at the original practice site tab
