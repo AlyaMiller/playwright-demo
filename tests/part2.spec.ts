@@ -74,4 +74,3 @@ test("verifies that the single-file downloaded", async ({ page }) => {
   const result = await download;
   console.log(result.suggestedFilename());
 });
-//npx playwright test part2.spec.ts --headed
