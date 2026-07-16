@@ -2,7 +2,9 @@
 import { test, expect } from "@playwright/test";
 
 //------------Task 1
-test("clicks Click Me and double clicks Double Click Me buttons", async ({ page }) => {
+test("clicks Click Me and double clicks Double Click Me buttons", async ({
+  page,
+}) => {
   await page.goto("https://selectors-practice.onrender.com/");
   //added exact: true, otherwise 2 elements matching locator
   await page.getByRole("button", { name: "Click Me", exact: true }).click();
@@ -62,4 +64,13 @@ test("clicks Load Data and waits for result", async ({ page }) => {
   await page.getByRole("button", { name: "Load Data" }).click();
   //await page.waitForSelector("#data");
   await page.locator("#data").waitFor({ state: "visible" });
+});
+
+//Mini Challenge
+test("verifies that the single-file downloaded", async ({ page }) => {
+  await page.goto("https://selectors-practice.onrender.com/");
+  const download = page.waitForEvent("download");
+  await page.getByRole("button", { name: "Download Single File" }).dblclick();
+  const result = await download;
+  console.log(result.suggestedFilename());
 });
